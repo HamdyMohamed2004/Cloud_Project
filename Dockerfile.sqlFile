@@ -1,0 +1,11 @@
+# Use the official MySQL image as a base
+FROM mysql:5.7
+
+# Set the root password for MySQL
+ENV MYSQL_ROOT_PASSWORD=hamdy423651
+
+# Copy the SQL initialization script into the Docker container
+COPY sqlFile.sql /docker-entrypoint-initdb.d/
+
+# Expose the MySQL port
+EXPOSE 3306
